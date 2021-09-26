@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseURL = 'https://treehousechallenge.contractornation.com/';
+const baseURL = 'https://treehousechallenge.contractornation.com';
 
 
 @Injectable({

@@ -25,6 +25,7 @@ export class CustomerListComponent implements OnInit {
       .subscribe(
         customers => {
           this.customers = customers;
+          // debugger 
           console.log(customers);
         },
         error => {

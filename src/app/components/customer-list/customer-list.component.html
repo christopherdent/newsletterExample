@@ -27,28 +27,29 @@
           [class.active]="i == currentIndex"
           (click)="setCurrentCustomer(customer, i)"
         >
-  
+        {{ customer.name }}
+
         </li>
       </ul>
   
-      <button class="m-4 btn btn-sm btn-danger" (click)="deleteAllCustomers()">
+      <!-- <button class="m-4 btn btn-sm btn-danger" (click)="deleteAllCustomers()">
         Delete All
-      </button>
+      </button> -->
     </div>
     <div class="col-md-6">
       <div *ngIf="currentCustomer">
         <h4>Customer</h4>
         <div>
-          <label><strong>Name:</strong></label> 
+          <label><strong>Name:  {{currentCustomer.name }}</strong></label> 
         </div>
         <div>
-          <label><strong>Description:</strong></label>
+          <label><strong>Email: {{currentCustomer.email }}</strong></label>
   
         </div>
-        <div>
+        <!-- <div>
           <label><strong>Status:</strong></label>
   
-        </div>
+        </div> -->
   
         <a class="badge badge-warning" routerLink="/customers/">
           Edit

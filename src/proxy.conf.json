@@ -2,7 +2,7 @@
 
 {
   "/api": {
-    "target": "https://treehousechallenge.contractornation.com/",
+    "target": "https://treehousechallenge.contractornation.com/newsletter",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {

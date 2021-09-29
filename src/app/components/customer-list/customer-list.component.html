@@ -1,25 +1,14 @@
 <div class="list row">
-    <div class="col-md-8">
-      <div class="input-group mb-4">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Search by name"
-          [(ngModel)]="name"
-        />
-        <div class="input-group-append">
-          <button
-            class="btn btn-outline-secondary"
-            type="button"
-            (click)="searchByName()"
-          >
-            Search
-          </button>
-        </div>
-      </div>
-    </div>
     <div class="col-md-6">
       <h4>Customer List</h4>
+      <br>
+
+      <div *ngIf="!currentCustomer">
+        <br />
+        <p>Please click on a customer</p>
+      </div>
+
+
       <ul class="list-group">
         <li
           class="list-group-item"
@@ -27,38 +16,32 @@
           [class.active]="i == currentIndex"
           (click)="setCurrentCustomer(customer, i)"
         >
-        {{ customer.name }}
-
+        {{ customer.name }}   <br>
+      
         </li>
       </ul>
-  
-      <!-- <button class="m-4 btn btn-sm btn-danger" (click)="deleteAllCustomers()">
-        Delete All
-      </button> -->
     </div>
+   
     <div class="col-md-6">
+   
       <div *ngIf="currentCustomer">
+   
         <h4>Customer</h4>
+   
         <div>
+   
           <label><strong>Name:  {{currentCustomer.name }}</strong></label> 
+   
         </div>
+   
         <div>
           <label><strong>Email: {{currentCustomer.email }}</strong></label>
-  
         </div>
-        <!-- <div>
-          <label><strong>Status:</strong></label>
   
-        </div> -->
-  
-        <a class="badge badge-warning" routerLink="/customers/">
-          Edit
-        </a>
-      </div>
-  
-      <div *ngIf="!currentCustomer">
-        <br />
-        <p>Please click on a customer</p>
+        <button class="m-4 btn btn-sm btn-danger" (click)="deleteCustomer()">
+          Delete 
+        </button>
+
       </div>
     </div>
   </div>

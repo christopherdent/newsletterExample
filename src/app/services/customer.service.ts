@@ -12,15 +12,16 @@ import { Observable } from 'rxjs';
 export class CustomerService {
 
 
-  // private baseURL = 'https://treehousechallenge.contractornation.com/';
+  private baseURL = 'https://treehousechallenge.contractornation.com/newsletter';
+    //  private baseURL = 'http://localhost:3000/api/v1/customers/';
   
-  private baseURL = 'http://localhost:3000/api/v1/customers/';
-  
+
+
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      //  Authorization: 'c1c36db0-1bdf-11ec-bc70-3ba4acafe2c5'
+      // 'Content-Type': 'application/json',
+      // 'Accept': 'application/json',
+      Authorization: 'c1c36db0-1bdf-11ec-bc70-3ba4acafe2c5'
        
       
     })
@@ -31,7 +32,7 @@ export class CustomerService {
 
 
   readAll(): Observable<any> {
-    // return this.httpClient.get(this.baseURL, this.httpOptions);
+     
     return this.httpClient.get(this.baseURL, this.httpOptions);
   }
 
@@ -56,9 +57,9 @@ export class CustomerService {
     return this.httpClient.delete(this.baseURL, this.httpOptions);
   }
 
-  searchByName(name): Observable<any> {
-    return this.httpClient.get(`${this.baseURL}?name=${name}`, this.httpOptions);
-  }
+  // searchByName(name): Observable<any> {
+  //   return this.httpClient.get(`${this.baseURL}?name=${name}`, this.httpOptions);
+  // }
 
 
 }

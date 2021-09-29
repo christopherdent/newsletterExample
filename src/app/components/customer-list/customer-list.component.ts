@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/services/customer.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -13,10 +14,24 @@ export class CustomerListComponent implements OnInit {
   name = '';
 
 
-  constructor(private customerService: CustomerService) { }
+  constructor(
+    private customerService: CustomerService,
+    private route: ActivatedRoute,
+    private router: Router) { }
+
 
   ngOnInit(): void {
     this.readCustomers();
+  }
+
+  sortByDate( a, b ) {
+    if ( a.created_on < b.created_on ){
+      return -1;
+    }
+    if ( a.created_on > b.created_on ){
+      return 1;
+    }
+    return 0;
   }
 
 
@@ -25,7 +40,8 @@ export class CustomerListComponent implements OnInit {
       .subscribe(
         customers => {
           this.customers = customers;
-          // debugger 
+            
+          customers.sort(this.sortByDate)
           console.log(customers);
         },
         error => {
@@ -45,31 +61,19 @@ export class CustomerListComponent implements OnInit {
     this.currentIndex = index;
   }
 
-
-  deleteAllCustomers(): void {
-    this.customerService.deleteAll()
+  
+  deleteCustomer(): void {
+    this.customerService.delete(this.currentCustomer.id)
       .subscribe(
         response => {
           console.log(response);
-          this.readCustomers();
+          this.router.navigate(['/customers']);
+          this.refresh();
         },
         error => {
           console.log(error);
         });
   }
 
-
-
-  searchByName(): void {
-    this.customerService.searchByName(this.name)
-      .subscribe(
-        customers => {
-          this.customers = customers;
-          console.log(customers);
-        },
-        error => {
-          console.log(error);
-        });
-  }
 
 }

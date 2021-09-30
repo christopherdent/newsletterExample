@@ -41,7 +41,7 @@ export class CustomerListComponent implements OnInit {
         customers => {
           this.customers = customers;
             
-          customers.sort(this.sortByDate)
+          customers.sort(this.sortByDate).reverse()
           console.log(customers);
         },
         error => {

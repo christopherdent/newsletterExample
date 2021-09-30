@@ -1,35 +1,43 @@
 <div style="width: 500px; margin: auto;">
     <div class="submit-form">
-      <div *ngIf="!submitted">
+
+<form>
+      <div *ngIf="!submitted">   
+
+
         <div class="form-group">
           <label for="name">Name</label>
           <input
             type="text"
             class="form-control"
             id="name"
-            required
-            [(ngModel)]="customer.name"
-            name="name"
+             
+            [(ngModel)]="customer.name" 
+            name="name"   
+            required minlength="4"     
           />
         </div>
   
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input
-            class="form-control"
-            id="email"
-            required
-            [(ngModel)]="customer.email"
-            name="email"
+          <input class="form-control" 
+          id="email"  
+          [(ngModel)]="customer.email"
+           name="email"  
+           required          
           />
         </div>
-  
-        <button (click)="createCustomer()" class="btn btn-success">Create</button>
+        <br>
+        <button (click)="createCustomer()" class="btn btn-success" >Create</button>
+        
       </div>
-  
+    </form>
       <div *ngIf="submitted">
         <h3>You successfully created a customer!</h3>
-        <button class="btn btn-success" (click)="newCustomer()">New..</button>
+        <button class="btn btn-success" (click)="newCustomer()">Add another...</button>
+        <button hidden>Add another...</button>
+        <button class="btn btn-success" (click)="showCustomers()">View List...</button>
       </div>
+
     </div>
   </div>

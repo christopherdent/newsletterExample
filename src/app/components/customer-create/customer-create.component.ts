@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/services/customer.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-customer-create',
@@ -9,16 +11,25 @@ import { CustomerService } from 'src/app/services/customer.service';
 export class CustomerCreateComponent implements OnInit {
   customer = {
     name: '',
-    email: '',
-    available: false
+    email: ''
   };
   submitted = false;
 
 
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService,
+    private route: ActivatedRoute,
+    private router: Router) { }
+
+
+
+  
+
+
 
   ngOnInit(): void {
+
+    
   }
 
 
@@ -45,9 +56,13 @@ newCustomer(): void {
   this.customer = {
     name: '',
     email: '',
-    available: false
+    
   };
   }
 
+
+  showCustomers(): void {
+    this.router.navigate(['/customers']);
+  }
 
 }

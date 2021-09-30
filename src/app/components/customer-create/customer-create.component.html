@@ -1,8 +1,8 @@
 <div style="width: 500px; margin: auto;">
     <div class="submit-form">
 
-<form>
-      <div *ngIf="!submitted">   
+ 
+      <form *ngIf="!submitted" ngNativeValidate #form>   
 
 
         <div class="form-group">
@@ -11,27 +11,30 @@
             type="text"
             class="form-control"
             id="name"
-             
-            [(ngModel)]="customer.name" 
+            [(ngModel)]="customer.name" required
             name="name"   
-            required minlength="4"     
+            
           />
+        
         </div>
-  
+    
+
         <div class="form-group">
           <label for="email">Email Address</label>
           <input class="form-control" 
           id="email"  
-          [(ngModel)]="customer.email"
-           name="email"  
-           required          
+          [(ngModel)]="customer.email" required
+          name="email"            
           />
-        </div>
-        <br>
-        <button (click)="createCustomer()" class="btn btn-success" >Create</button>
         
-      </div>
+        </div>
+        
+            <br>
+        
+            <button (click)="form.checkValidity()? createCustomer() : null" class="btn btn-success">Create</button>
+        
     </form>
+   
       <div *ngIf="submitted">
         <h3>You successfully created a customer!</h3>
         <button class="btn btn-success" (click)="newCustomer()">Add another...</button>

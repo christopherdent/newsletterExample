@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/services/customer.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+ 
 
 @Component({
   selector: 'app-customer-create',

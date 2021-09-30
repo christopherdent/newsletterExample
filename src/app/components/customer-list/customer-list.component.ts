@@ -34,7 +34,6 @@ export class CustomerListComponent implements OnInit {
     return 0;
   }
 
-
   readCustomers(): void {
     this.customerService.readAll()
       .subscribe(
@@ -55,12 +54,10 @@ export class CustomerListComponent implements OnInit {
     this.currentIndex = -1;
   }
 
-
   setCurrentCustomer(customer, index): void {
     this.currentCustomer = customer;
     this.currentIndex = index;
   }
-
   
   deleteCustomer(): void {
     this.customerService.delete(this.currentCustomer.id)

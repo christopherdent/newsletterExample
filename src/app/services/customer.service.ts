@@ -11,15 +11,14 @@ import { Observable } from 'rxjs';
 
 export class CustomerService {
 
-
-  private baseURL = 'https://treehousechallenge.contractornation.com/newsletter';
-    //  private baseURL = 'http://localhost:3000/api/v1/customers/';
+ 
+    private baseURL = 'http://localhost:3000/api/v1/customers';
   
 
 
   httpOptions = {
     headers: new HttpHeaders({
-       Authorization: 'c1c36db0-1bdf-11ec-bc70-3ba4acafe2c5'
+      'Content-type' : 'application/json; charset=UTF-8'
        
       
     })

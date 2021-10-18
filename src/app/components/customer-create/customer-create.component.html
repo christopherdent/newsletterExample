@@ -1,10 +1,14 @@
 <div style="width: 500px; margin: auto;">
     <div class="submit-form">
 
- 
+<table>
+   <tr>
+    <td><img src = 'https://cjdportfolio.s3.amazonaws.com/get-newsletter.png' id='image'></td>
+
+    <td>
+
+
       <form *ngIf="!submitted" ngNativeValidate #form>   
-
-
         <div class="form-group">
           <label for="name">Name</label>
           <input
@@ -41,6 +45,8 @@
         <button hidden>Add another...</button>
         <button class="btn btn-success" (click)="showCustomers()">View List...</button>
       </div>
-
+    </td>
+    </tr>
+    </table>
     </div>
   </div>

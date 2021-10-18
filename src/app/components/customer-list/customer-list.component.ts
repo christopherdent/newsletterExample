@@ -20,6 +20,7 @@ export class CustomerListComponent implements OnInit {
     private router: Router) { }
 
 
+    
   ngOnInit(): void {
     this.readCustomers();
   }
@@ -39,14 +40,13 @@ export class CustomerListComponent implements OnInit {
       .subscribe(
         customers => {
           this.customers = customers;
-            
           customers.sort(this.sortByDate).reverse()
           console.log(customers);
         },
         error => {
           console.log(error);
         });
-  }
+      }
 
   refresh(): void {
     this.readCustomers();
@@ -60,10 +60,9 @@ export class CustomerListComponent implements OnInit {
   }
   
   deleteCustomer(): void {
-
-    
+  
     this.customerService.delete(this.currentCustomer.id)
-    
+   
       .subscribe(
         response => {
           console.log(response);

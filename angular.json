@@ -68,7 +68,6 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "newsletterExample:build"
-            
           },
           "configurations": {
             "production": {
@@ -84,7 +83,6 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "newsletterExample:build"
-
           }
         },
         "test": {
@@ -103,6 +101,10 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }

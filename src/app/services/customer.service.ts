@@ -12,9 +12,9 @@ import { Observable } from 'rxjs';
 export class CustomerService {
 
  
-    private baseURL = 'http://localhost:3000/api/v1/customers';
-  
-
+    // private baseURL = 'http://localhost:3000/api/v1/customers';
+    private baseURL = 'https://cd-news-backend.herokuapp.com/api/v1/customers';
+    
 
   httpOptions = {
     headers: new HttpHeaders({

@@ -3,7 +3,58 @@ button {
     margin-left :5px }
 
 
-    table {
-        border-spacing: 1000px
-        
-      }
+    
+.main{
+   
+  display: flex;
+  flex-direction: column;
+  /* background-color:rgb(218, 218, 205); */
+  background-color: whitesmoke;
+  padding: 10px; 
+  border-radius: 10%; 
+  box-shadow: 10px 5px 5px black;
+  
+}
+
+ 
+.submit-form {
+  display: flex; 
+  margin-top: 25px;
+  color: forestgreen;
+  align-self: center;
+  
+  justify-content: center;
+ 
+
+}
+  
+#table1 > tr > td > form > div > label {
+  margin-top: 50px;
+  display: block;
+  text-align: center;
+  line-height: 150%;
+  font-size: 1.5em;
+
+}
+
+#table1 > tr > td > form > button {
+ 
+ margin-left: 100px;
+ margin-top: 25px; 
+ background-color: forestgreen;
+ border: none;
+
+
+}
+
+#image{
+   
+  border-radius: 30px;
+  opacity: 70%;
+  height: 300px; 
+  width: 500px; 
+  margin: auto;
+}
+      
+
+ 

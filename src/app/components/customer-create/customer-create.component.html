@@ -1,13 +1,20 @@
-<div style="width: 500px; margin: auto;">
+<div style="width: 600px; margin: auto;" class="main">
+
+
+  <img src = 'https://cjdportfolio.s3.amazonaws.com/get-newsletter.png' id='image'>
+      
+     
+
+
+  
     <div class="submit-form">
 
+
+    
 <table id='table1'>
    <tr>
-    <!-- <td>
-      <img src = 'https://cjdportfolio.s3.amazonaws.com/get-newsletter.png' id='image'>
+ 
     
-    </td>
-     -->
     <td>
 
 
@@ -27,7 +34,7 @@
     
 
         <div class="form-group">
-          <label for="email">Email Address</label>
+          <label for="email">Email</label>
           <input class="form-control" 
           id="email"  
           [(ngModel)]="customer.email" required
@@ -38,7 +45,7 @@
         
             <br>
         
-            <button (click)="form.checkValidity()? createCustomer() : null" class="btn btn-success">Create</button>
+            <button (click)="form.checkValidity()? createCustomer() : null" class="btn btn-primary btn-block" >Create</button>
         
     </form>
    

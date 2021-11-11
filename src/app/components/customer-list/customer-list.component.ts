@@ -35,10 +35,20 @@ export class CustomerListComponent implements OnInit {
     return 0;
   }
 
+  hideloader = () => {
+    document.getElementById('loading').style.display = 'none';
+    
+  }
+
   readCustomers(): void {
     this.customerService.readAll()
       .subscribe(
         customers => {
+
+        
+            this.hideloader()
+          
+
           this.customers = customers;
           customers.sort(this.sortByDate).reverse()
           console.log(customers);
@@ -46,6 +56,7 @@ export class CustomerListComponent implements OnInit {
         error => {
           console.log(error);
         });
+    
       }
 
   refresh(): void {

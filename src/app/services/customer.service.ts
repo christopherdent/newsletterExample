@@ -16,6 +16,7 @@ export class CustomerService {
     private baseURL = 'https://cd-news-backend.herokuapp.com/api/v1/customers';
     
 
+    
   httpOptions = {
     headers: new HttpHeaders({
       'Content-type' : 'application/json; charset=UTF-8'
@@ -26,6 +27,10 @@ export class CustomerService {
 
   constructor(private httpClient: HttpClient)  { }
 
+
+
+
+  
   readAll(): Observable<any> {
      
     return this.httpClient.get(this.baseURL, this.httpOptions);
